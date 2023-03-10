@@ -6,6 +6,7 @@ import com.byteowls.jopencage.model.JOpenCageReverseRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 @Component

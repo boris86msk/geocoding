@@ -1,25 +1,25 @@
 package com.example.geocoding.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "test_city")
+@Table(name = "cities")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class CityEntity {
 
     @Id
+    @SequenceGenerator(name="citiesSequence", sequenceName="cities_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="citiesSequence")
+
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "city_name")
+    @Column(name = "name")
     private String cityName;
 
 }
